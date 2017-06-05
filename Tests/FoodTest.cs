@@ -34,6 +34,21 @@ namespace Eat
       Assert.Equal(firstFood, secondFood);
     }
 
+    [Fact]
+    public void Test_Save_SaveToDatabase()
+    {
+      //Arrange
+      MakeFood testFood = new MakeFood("Beef");
+
+      //Act
+      testFood.Save();
+      List<MakeFood> result = MakeFood.GetAll();
+      List<MakeFood> testList = new List<MakeFood>{testFood};
+
+      //Assert
+      Assert.Equal(result, testList);
+    }
+
     public void Dispose()
     {
       MakeFood.DeleteAll();
