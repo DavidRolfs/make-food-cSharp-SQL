@@ -129,7 +129,7 @@ namespace Eat
     {
       SqlConnection conn = DB.Connection();
       conn.Open();
-      SqlCommand cmd = new SqlCommand("DELETE FROM type;", conn);
+      SqlCommand cmd = new SqlCommand("DELETE FROM food;", conn);
       cmd.ExecuteNonQuery();
       conn.Close();
     }
