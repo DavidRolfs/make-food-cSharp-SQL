@@ -23,6 +23,17 @@ namespace Eat
       Assert.Equal(0, result);
     }
 
+    [Fact]
+    public void Test_Equal_ReturnsTrueIfNameAreTheSame()
+    {
+      //Arrange, Act
+      MakeFood firstFood = new MakeFood("chicken");
+      MakeFood secondFood = new MakeFood("chicken");
+
+      //Assert
+      Assert.Equal(firstFood, secondFood);
+    }
+
     public void Dispose()
     {
       MakeFood.DeleteAll();
