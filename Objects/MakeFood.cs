@@ -99,7 +99,7 @@ namespace Eat
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("SELECT * FROM type WHERE id = @Foodid;", conn);
+      SqlCommand cmd = new SqlCommand("SELECT * FROM food WHERE id = @Foodid;", conn);
       SqlParameter foodIdParameter = new SqlParameter();
       foodIdParameter.ParameterName = "Foodid";
       foodIdParameter.Value = id.ToString();

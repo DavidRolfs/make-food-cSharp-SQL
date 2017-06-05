@@ -66,6 +66,20 @@ namespace Eat
       Assert.Equal(testId, result);
     }
 
+    [Fact]
+    public void Test_Find_FindsFoodInDatabase()
+    {
+      //Arrange
+      MakeFood testFood = new MakeFood("chicken");
+      testFood.Save();
+
+      //Act
+      MakeFood foundFood = MakeFood.Find(testFood.GetId());
+
+      //Assert
+      Assert.Equal(testFood, foundFood);
+    }
+
     public void Dispose()
     {
       MakeFood.DeleteAll();
